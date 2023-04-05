@@ -2,8 +2,7 @@ name: Deploy
 
 on:
   push:
-    branches:
-      - main
+    branches: ['main']
 
 jobs:
   build:
@@ -23,7 +22,7 @@ jobs:
       - name: Upload static files
         uses: actions/upload-artifact@v3
         with:
-          name: dist
+          name: ttt
           path: ./dist
 
   deploy:
@@ -35,7 +34,7 @@ jobs:
       - name: Download artifact
         uses: actions/download-artifact@v3
         with:
-          name: dist
+          name: ttt
           path: ./dist
 
       - name: Deploy to GitHub Pages
