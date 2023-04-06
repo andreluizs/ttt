@@ -10,22 +10,22 @@
     $board[id] = $playerTurn;
     e.target.innerHTML = $playerTurn;
     e.target.removeEventListener("click", handleClick);
-    dispatch('makeMove');
+    dispatch("makeMove");
   };
-  
 </script>
 
-<button {id} class="cell" on:click={handleClick} />
+<button class="cell" on:click={(handleClick)} />
 
 <style>
   .cell {
     width: 100px;
     height: 100px;
-    border: 2px solid black;
     box-sizing: border-box;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: aliceblue;
+    border-radius: 0.25em;
+    font-size: 10vmin;
+    font-weight: bold;
   }
 </style>

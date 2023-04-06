@@ -19,9 +19,12 @@
     if (verifyWinner()) {
       message = `O jogador ${$playerTurn} ganhou!`;
       return;
+    } else if ($board.filter((p) => !p).length === 0) {
+      message = `Deu empate!`;
+      return;
     }
 
-    $playerTurn = $playerTurn == "X" ? "O" : "X";
+    $playerTurn = $playerTurn == "✕" ? "⭘" : "✕";
   };
 
   const verifyWinner = () => {
@@ -41,14 +44,14 @@
     <Cell {id} on:makeMove={handleMove} />
   {/each}
 </div>
-<p>{message}</p>
+<h2>{message}</h2>
 
 <style>
   .board {
-    width: 300px;
-    height: 300px;
+    width: 320px;
+    height: 320px;
     display: flex;
     flex-wrap: wrap;
-    border: solid 1px black;
+    gap: 5px;
   }
 </style>
